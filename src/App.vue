@@ -14,7 +14,7 @@ export default {
   // }
   setup(){
     const menuVisiable = ref(false)
-    provide('xxx', menuVisiable)
+    provide('menuVisiable', menuVisiable)
   }
 }
 </script>
