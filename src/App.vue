@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { ref , provide} from 'vue'
+import { ref , provide} from "vue";
 
 export default {
   name: 'App',
@@ -13,8 +13,11 @@ export default {
   //   Hushuo: Hushuo
   // }
   setup(){
-    const menuVisiable = ref(false)
-    provide('menuVisiable', menuVisiable)
-  }
-}
+    const width = document.documentElement.clientWidth;
+    //console.log(width)
+
+    const menuVisiable = ref(width <= 500 ? false : true);
+    provide('menuVisiable', menuVisiable);//set
+  },
+};
 </script>

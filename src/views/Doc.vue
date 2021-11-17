@@ -43,10 +43,7 @@ aside {
   background: lightblue;
   width: 150px;
   padding: 16px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 70px;
+
   > h2 {
     margin-bottom: 4px;
   }
@@ -55,4 +52,12 @@ aside {
       padding: 4px 0;
     }
   }
-}</style>
+  @media (max-width: 500px){
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 70px;
+
+  }
+}
+</style>
