@@ -1,8 +1,6 @@
 <template>
-  <div>
-    Hello  、、 
-  </div>
-  <Hushuo/>
+  <router-view />
+  <!-- <Hushuo/> -->
 
 </template>
 
@@ -11,8 +9,8 @@ import Hushuo from './components/Hushuo.vue'
 
 export default {
   name: 'App',
-  components: {
-    Hushuo: Hushuo
-  }
+  // components: {
+  //   Hushuo: Hushuo
+  // }
 }
 </script>
