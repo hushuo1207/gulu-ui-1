@@ -6,7 +6,7 @@
             <h2>一个厉害地 UI 框架</h2>
             <p class="actions">
                 <a href="">Github</a>
-                <a href="">开始</a>
+                <a href="http://localhost:3000/#/doc">开始</a>
             </p>
         </div>
     </div>
