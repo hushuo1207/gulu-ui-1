@@ -5,12 +5,16 @@
 </template>
 
 <script>
-import Hushuo from './components/Hushuo.vue'
+import { ref , provide} from 'vue'
 
 export default {
   name: 'App',
   // components: {
   //   Hushuo: Hushuo
   // }
+  setup(){
+    const menuVisiable = ref(false)
+    provide('xxx', menuVisiable)
+  }
 }
 </script>
