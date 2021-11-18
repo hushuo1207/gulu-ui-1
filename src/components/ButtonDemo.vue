@@ -12,6 +12,14 @@
         <Button theme="text"
         >你好</Button>
     </div>
+    <h1>示例2</h1>
+    <div>
+        <Button size="big"
+        >大杯</Button>
+        <Button>中杯</Button>
+        <Button size="small"
+        >小杯</Button>
+    </div>
 </template>
 <script lang = "ts">
 import Button from '../lib/Button.vue'
