@@ -25,7 +25,7 @@ export default {
       }
     },
     setup(props, context) {
-      // const navItems = ref<HTMLDivElement[]>([])
+      // const navItems = ref<HTMLDivElement[]>([])  selectedItem类型有错待解决
       const selectedItem = ref<HTMLDivElement>(null)
       const indicator = ref<HTMLDivElement>(null)
       const container = ref<HTMLDivElement>(null)
