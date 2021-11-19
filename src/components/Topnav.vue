@@ -2,26 +2,35 @@
     <div class = "topnav">
         <div class = "logo">
           <svg class="icon">
-    <use xlink:href="#icon-lemon"></use>
-</svg></div>
+          <use xlink:href="#icon-lemon"></use>
+          </svg></div>
         <ul class = "menu">
-            <li>菜单1</li>
-            <li>菜单2</li>
+            <li>
+              <router-link to="/doc">文档</router-link>
+            </li>
         </ul>
-        <span class="toggleAside" @click="toggleMenu"></span>
+        <svg v-if="toggleMenButtonVisiable" class="toggleAside" @click="toggleMenu">
+        <use xlink:href="#icon-menu"></use>
+        </svg>
     </div>
 </template>
 <script lang="ts">
 import { inject, Ref } from 'vue'
 export default {
-    setup(){
-        const menuVisiable = inject<Ref<boolean>> ('menuVisiable')
-        //console.log('Topnav获取的值：' + menuVisiable.value)
-        const toggleMenu = () => {
-            menuVisiable.value = !menuVisiable.value
-        }
-        return {toggleMenu}
+  props: {
+    toggleMenButtonVisiable: {
+      type: Boolean,
+      default: false
     }
+  },
+  setup(){
+      const menuVisiable = inject<Ref<boolean>> ('menuVisiable')
+      //console.log('Topnav获取的值：' + menuVisiable.value)
+      const toggleMenu = () => {
+          menuVisiable.value = !menuVisiable.value
+      }
+      return {toggleMenu}
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -55,9 +64,8 @@ $color: #007974;
     }
   }
   > .toggleAside{
-    width: 24px;
-    height: 24px;
-    background: red;
+    width: 32px;
+    height: 32px;
     position: absolute;
     left: 16px;
     top: 50%;
