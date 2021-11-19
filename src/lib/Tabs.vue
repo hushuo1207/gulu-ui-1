@@ -3,7 +3,7 @@
     <div class="gulu-tabs-nav" ref="container">
         <div class="gulu-tabs-nav-item" v-for="(t,index) in titles" :key="index"
         :class="{selected: t == selected}" @click="select(t)"
-        :ref="el => {if (el) navItems[index] = el}">{{t}}</div>
+        :ref="el => {if (t == selected) selectItem= el}">{{t}}</div>
     <div class="gulu-tabs-nav-indicator" ref = "indicator"></div>
     </div>
     
@@ -24,13 +24,11 @@ export default {
       }
     },
     setup(props, context) {
-      const navItems = ref<HTMLDivElement[]>([])
+      const selectItem = ref<HTMLDivElement>(null)
       const indicator = ref<HTMLDivElement>(null)
       const container = ref<HTMLDivElement>(null)
       const x = () => {
-        const divs = navItems.value
-        const result = divs.filter(div => div.classList.contains('selected'))[0]
-        const {width, left: left2} = result.getBoundingClientRect()
+        const {width, left: left2} = selectItem.value.getBoundingClientRect()
         indicator.value.style.width = width + 'px'
         const {left: left1} = container.value.getBoundingClientRect()
         const left = left2 - left1
@@ -51,7 +49,7 @@ export default {
         context.emit('update:selected', title)
       }
       return {
-          defaults, titles, select, navItems, indicator, container
+          defaults, titles, select, indicator, container, selectItem
       }
     }
 }
