@@ -52,8 +52,8 @@ $green: #02bcb0;
 $borde-radius: 4px;
 $color: #007974;
 .topnavAndBanner {
-  //background: rgb(227,255,253);
-  background: -webkit-liner-gradient(145deg, rgba(227,225,253,1) 0%, rgba(183,233,230,1) 100%);
+  background: rgb(227,255,253);
+  background: liner-gradient(145deg, rgba(227,225,253,1) 0%, rgba(183,233,230,1) 100%);
   // border-bottom-left-radius: 50% 40px;
   // border-bottom-right-radius: 50% 40px;
   clip-path: ellipse(80% 60% at 50% 40%);
