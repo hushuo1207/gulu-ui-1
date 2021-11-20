@@ -4,7 +4,7 @@
   <div class="demo">
     <h2>常规用法</h2>
     <div class="demo-component">
-      <SwitchDemo1 />
+        <component :is="SwitchDemo1"></component>
     </div>
     <div class="demo-actions">
       <Button>查看代码</Button>
@@ -16,12 +16,13 @@
   <div class="demo">
     <h2>支持 disabled </h2>
     <div class="demo-component">
-      <SwitchDemo2 />
+      <component :is="SwitchDemo1"></component>
     </div>
     <div class="demo-actions">
       <Button>查看代码</Button>
     </div>
     <div class="demo-code">
+        
         <pre v-text="SwitchDemo2.__sourceCode"></pre>
     </div>
   </div>
@@ -36,9 +37,6 @@ import Button from '../lib/Button.vue'
 import { ref } from 'vue'
 export default {
     components: {
-        Switch,
-        SwitchDemo1,
-        SwitchDemo2,
         Button
     },
     setup() {
