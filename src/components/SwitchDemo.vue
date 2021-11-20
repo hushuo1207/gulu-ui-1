@@ -7,28 +7,17 @@
 </template>
 <script lang="ts"> 
 
-import Switch from '../lib/Switch.vue'
 import SwitchDemo1 from './Switch1.demo.vue'
 import SwitchDemo2 from './Switch2.demo.vue'
-import Button from '../lib/Button.vue'
-import { ref } from 'vue'
-import 'prismjs'
-import 'prismjs/themes/prism.css'
-const Prism = (window as any).Prism
-//console.log(Prism)
 import Demo from './Demo.vue'
 export default {
     components: {
-        Button,
         Demo
     },
     setup() {
-        const bool = ref(false)
         return {
-            bool,
             SwitchDemo1,
-            SwitchDemo2,
-            Prism
+            SwitchDemo2
         }
     }
 }
