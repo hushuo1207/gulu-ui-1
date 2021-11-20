@@ -1,15 +1,31 @@
 <template>
-<article  class="markdown-body" v-html="md">
-
+<article  class="markdown-body" v-html="content">
 </article>
+
 </template>
-<script>
-import md from '../markdown/get-start.md';
+
+<script lang="ts">
+import {ref} from 'vue'
 export default {
-  data() {
-    return {
-      md
+  props: {
+    path: {
+      type: String,
+      required: true
     }
+  },
+  setup(props) {
+    const content = ref<string>(null)
+    import(props.path).then(result => {
+       content.value = result.default
+     })
+    return {
+      content
+    }
+    // 
+    // </template>
+    // <template>
+    // <article class="markdown-body" v-html="content">
+    // </article>
   }
 }
 </script>
